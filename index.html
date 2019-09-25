@@ -11,7 +11,7 @@
     <main class="container">
       <h1>Controle de Tarefas</h1>
         <div class="row">
-      
+            <input type="hidden" name="codigo" id="codigo" value="0101010101">
             <div class="form-group col-md-2">
               <label for="data">Data Final Execução</label>
               <input type="text" class="form-control" name="data"  id="data"
@@ -49,8 +49,8 @@
         <div id="actions" class="row">
             
                     <div class="col-md-12">
-                      <button type="submit" class="btn btn-primary" name="acao" value="salvar" 
-                      id="acao">Salvar</button>
+                      <button type="button" class="btn btn-primary" name="acao" value="salvar" 
+                      id="acao" onclick="salvar();">Salvar</button>
                       <a href="list_marca.php" class="btn btn-default">Consultar</a>
                     </div>
 
@@ -60,11 +60,9 @@
         <div class="row">
 
             <div class="col-md-6 form-group">
-                <input type="text"  placeholder="Digite e pressione <enter>" 
-                class="form-control" name="procurar" list="marcas"
+                <input type="text"  placeholder="Digite sua consulta" 
+                class="form-control" name="procurar"
                 id="procurar" size="37" value="">
-                <datalist id="marcas">
-                    <option value="MOTOROLA"><option value="SONY"><option value="HP"><option value="SAMSUNG"><option value="NOKIA"><option value="LG"><option value="MICROSOFT"><option value="DELL"><option value="CURVELLO">                </datalist>
             </div>            
         </div>
 
@@ -91,9 +89,20 @@
             </div>            
         </div>
 
-        </main> <!-- /container -->        
+    </main> <!-- /container -->  
+
         <script src="vendor/components/jquery/jquery.js"></script>
         <script src="vendor/components/bootstrap/js/bootstrap.min.js"></script>
-        <script src="vendor/components/bootstrap/js/main.js"></script>
+        <script src="vendor/components/bootstrap/js/bootstrap.js"></script>
+        <script>
+            function salvar(){  
+                console.log($('#codigo').val());
+                console.log($('#descricao').val());
+                console.log($('#estado').val());
+                console.log($('#data').val());
+                
+            }
+        </script>
+        
 </body>
 </html>
