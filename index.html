@@ -9,25 +9,55 @@
 </head>
 <body>
     <main class="container">
-        <form> 
-        <legend>Meu Formulário</legend>   
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <h1>Controle de Tarefas</h1>
+        <div class="row">
+      
+            <div class="form-group col-md-2">
+              <label for="data">Data Final Execução</label>
+              <input type="text" class="form-control" name="data"  id="data"
+              value="" 
+              placeholder="99/99/9999" required="true">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="estado">Estado</label>
+                <select class="form-control" name="estado" id="estado" >
+                  <option value="1">Fazer</option>
+                  <option value="2">Fazendo</option>
+                  <option value="3">Finalizado</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-2">
+                  <label for="cor">Data Final Execução</label>
+                  <input type="color" class="form-control" name="cor" 
+                  required="false">
+              </div>
+            
+            </div> 
+
+            <div class="row">
+      
+                <div class="form-group col-md-6">
+                  <label for="data">Descrição</label>
+                  <input type="text" class="form-control" name="descricao"  id="descricao"
+                  value="" 
+                  placeholder="Descrição" required="true">
+                </div>
+    
+        
+                
+                </div> 
+      
+            <div id="actions" class="row">
+            
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-primary" name="acao" value="salvar" 
+              id="acao">Salvar</button>
+              <a href="list_marca.php" class="btn btn-default">Consultar</a>
+            </div>
+          
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input">
-              Check me out
-            </label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
         </main> <!-- /container -->
         <script src="vendor/components/jquery/jquery.js"></script>
         <script src="vendor/components/bootstrap/js/bootstrap.min.js"></script>
