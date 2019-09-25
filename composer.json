@@ -1,0 +1,20 @@
+{
+    "name": "curvello-heck/task-control",
+    "description": "Exemplo usando HTML, CSS, JS, JQuery, Ajax e LocalStorage",
+    "type": "project",
+    "require": {
+        "components/bootstrap": "^4.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rodrigo Curvêllo",
+            "email": "rodrigo.curvello@gmail.com"
+        },
+        {
+            "name": "Cristhian Heck",
+            "email": "cristhian.heck@ifc.edu.br"
+        }
+    ],
+    "minimum-stability": "stable"
+}
