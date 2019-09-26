@@ -11,7 +11,7 @@
     <main class="container">
       <h1>Controle de Tarefas</h1>
         <div class="row">
-            <input type="hidden" name="codigo" id="codigo" value="0101010101">
+            <input type="hidden" name="codigo" id="codigo" value="123">
             <div class="form-group col-md-2">
               <label for="data">Data Final Execução</label>
               <input type="text" class="form-control" name="data"  id="data"
@@ -30,7 +30,7 @@
 
               <div class="form-group col-md-2">
                   <label for="cor">Data Final Execução</label>
-                  <input type="color" class="form-control" name="cor" 
+                  <input type="color" class="form-control" id="cor" name="cor" 
                   required="false">
               </div>
             
@@ -98,6 +98,7 @@
             function salvar(){  
                 console.log($('#codigo').val());
                 console.log($('#descricao').val());
+                console.log($('#cor').val());
                 console.log($('#estado').val());
                 console.log($('#data').val());
                 
