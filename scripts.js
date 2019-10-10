@@ -107,6 +107,25 @@ function altera(id){
     return retorno;
  }
 
+ /**
+  * Função de pesquisa de tarefa por descrição
+  */
+ function consultar(){
+    var descricao = $('#procurar').val();
+    if(descricao == ""){
+        apresenta(retornaVetorCentral());
+    } else {
+        vetorCentral = retornaVetorCentral();
+        var busca = new Array();
+        for(var i = 0; i < vetorCentral.length; i++){
+            var vetor = vetorCentral[i];
+            if(vetor['descricao'] == descricao){
+                busca.push(vetor);
+            }
+        }
+        apresenta(busca);
+    }   
+}
 
  /**
   * Funções que retorna ou atualiza o vetorCentral
@@ -124,3 +143,4 @@ function altera(id){
  function inicia(){
     apresenta(retornaVetorCentral());
  }
+
