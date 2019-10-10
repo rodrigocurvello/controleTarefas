@@ -8,7 +8,7 @@
    
     <title>Exemplos Jquery e Ajax</title>
 </head>
-<body>
+<body onload="apresenta();">
     <main class="container">
       <h1>Controle de Tarefas</h1>
         <div class="row">
@@ -52,7 +52,7 @@
                     <div class="col-md-12">
                       <button type="button" class="btn btn-primary" name="acao" value="salvar" 
                       id="acao" onclick="salvar();">Salvar</button>
-                      <a href="list_marca.php" class="btn btn-default">Consultar</a>
+                      <a id="consultar" href="list_marca.php" class="btn btn-default">Consultar</a>
                     </div>
 
         </div>
@@ -78,14 +78,14 @@
                        <th width="20"><b>Alterar</b></th>
                        <th width="20"><b>Excluir</b></th>
                    </tr>
-                   <tr>                    <td align="center">20190919090909</td>
+                   <!--<tr>                    <td align="center">20190919090909</td>
                        <td>Estudar JavaScript</td>  
                        <td>Fazer</td>  
                        <td>|||||</td>          
    
                        <td align="center"><a href="cad_marca.php?acao=editar&codigo=1"><img src="img/glyphicons-31-pencil.png" width="20em"></a></td>
                        <td align="center"><a href="javascript:excluirRegistro('acaoMarca.php?acao=excluir&codigo=1')"><img src="img/glyphicons-17-bin.png" width="17em"></a></td>
-                   </tr>         
+                   </tr> -->   
                </table> 
             </div>            
         </div>
