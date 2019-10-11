@@ -21,21 +21,25 @@ if(localStorage.getItem("controleCodigo") == null){
  */
 
 function salvar(){ 
-    vetorCentral = retornaVetorCentral();
-    if($('#codigo').val() == -1){
-        var novoCodigo = localStorage.getItem("controleCodigo");
-        //console.log(`1 ${localStorage.getItem("controleCodigo")}`);
-        var objetoJSON = {codigo:novoCodigo,descricao:`${$('#descricao').val()}`,cor:`${$('#cor').val()}`,estado:$('#estado').val(),data:`${$('#data').val()}`};
-        vetorCentral.push(objetoJSON);    
-        localStorage.setItem("controleCodigo", ++novoCodigo);
+    if($('#data').val()==""){ //valida campo "data" se está preenchido
+        $('#data').focus();
+    } else if($('#descricao').val()==""){ //valida campo "descrição" se está preenchido
+        $('#descricao').focus();
     } else {
-        var posicao = busca($('#codigo').val());
-        vetorCentral[posicao] = {codigo:$('#codigo').val(),descricao:`${$('#descricao').val()}`,cor:`${$('#cor').val()}`,estado:$('#estado').val(),data:`${$('#data').val()}`};
+        vetorCentral = retornaVetorCentral();
+        if($('#codigo').val() == -1){ //inserção de nova tarefa
+            var novoCodigo = localStorage.getItem("controleCodigo");
+            var objetoJSON = {codigo:novoCodigo,descricao:`${$('#descricao').val()}`,cor:`${$('#cor').val()}`,estado:$('#estado').val(),data:`${$('#data').val()}`};
+            vetorCentral.push(objetoJSON);    
+            localStorage.setItem("controleCodigo", ++novoCodigo);
+        } else { //atualizção de tarefa já criada
+            var posicao = busca($('#codigo').val());
+            vetorCentral[posicao] = {codigo:$('#codigo').val(),descricao:`${$('#descricao').val()}`,cor:`${$('#cor').val()}`,estado:$('#estado').val(),data:`${$('#data').val()}`};
+        } 
+        atualizaVetorCentral(vetorCentral);
+        apresenta(vetorCentral);
         zeraCampos();
     }
-    atualizaVetorCentral(vetorCentral);
-    //console.log(`2 ${localStorage.getItem("controleCodigo")}`);
-    apresenta(vetorCentral);
 }
 function zeraCampos(){
     $('#codigo').val(-1);
@@ -49,7 +53,6 @@ function zeraCampos(){
  * Atualização da tabela 
  */
 function apresenta(vetorCentral){
-   // vetorCentral = retornaVetorCentral();
     $('#tabelaTarefas').find("tr:gt(0)").remove();
     if(vetorCentral.length == 0){
         $('#tabelaTarefas').append("<tr><td  align='center' colspan='6'>Nenhuma tarefa cadastrada</td></tr>");
