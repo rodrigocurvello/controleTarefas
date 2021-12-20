@@ -1,9 +1,10 @@
 # controleTarefas
 Exemplo Básico de Controle de Tarefas, utilizando:
 1. JavaScript;
-2. Bootstrap;
-3. JQuery;
-4. Composer.
+2. localStorage
+3. Bootstrap;
+4. JQuery;
+5. Composer.
 
 # GET START
 1. clone repository
